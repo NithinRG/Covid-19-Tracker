@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="assets/img/virus.svg">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <script src="https://code.jquery.com/jquery-3.5.0.min.js" integrity="sha256-xNzN2a4ltkB44Mc/Jz3pT4iU1cmeR0FkXs4pru/JxaQ=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+    <script src="./assets/js/script.js"></script>
+    <title>COVID-19 Stats</title>
+</head>
+<body>
+    <div class="container-fluid">
+        <h1 class="heading">COVID-19 Tracker</h1>
+        <br><br>
+        <div class="row">
+          <div class="col-12 col-md-4 pb-5 mx-auto">
+            <div class="row text-center">
+              <div class="col-12 globalTotalCasesHeader">Total Cases</div>
+            </div>
+            <div class="row text-center">
+              <div class="col-12 globalTotalCases"></div>
+            </div>
+          </div>
+          <div class="col-12 col-md-4 pb-5 mx-auto">
+            <div class="row text-center">
+              <div class="col-12 globalTotalRecoveredHeader">Total Recovered</div>
+            </div>
+            <div class="row text-center">
+              <div class="col-12 globalTotalRecovered"></div>
+            </div>
+          </div>
+          <div class="col-12 col-md-4 pb-5 mx-auto">
+            <div class="row text-center">
+              <div class="col-12 globalTotalDeathsHeader">Total Deaths</div>
+            </div>
+            <div class="row text-center">
+              <div class="col-12 globalTotalDeaths"></div>
+            </div>
+          </div>         
+        </div>
+        <div class="text-center">
+          <div class="search-box">
+            <input type="text" id="searchBox" onkeyup="myFunction()" placeholder="Search by country"/><span></span>
+          </div>
+        </div>
+        <table id="myTable">
+            <thead>
+              <tr>
+                <th class="p-3 country" scope="col">Country</th>
+                <th class="p-3 totalCases" scope="col">Total Cases</th>
+                <th class="p-3 totalRecovered" scope="col">Total Recovered</th>
+                <th class="p-3 totalDeaths" scope="col">Total Deaths</th>
+                <th class="p-3 newCases" scope="col">New Cases</th>
+                <th class="p-3 newRecovered" scope="col">New Recovered</th>
+                <th class="p-3 newDeaths" scope="col">New Deaths</th>
+              </tr>
+            </thead>
+            <tbody class="tableBody">
+              <!-- This is where the rows gets appended -->
+            </tbody>
+        </table>
+        <div class="d-none" id="notFound">
+          <p>No matches found</p>
+        </div>
+        <div>
+          <p class="lastUpdated">Last updated: </p>
+        </div>
+        <div class="text-right">
+          <button class="btn backToTop">Back to top</div>
+        </div>
+    </div>
+
+    <script>
+      function myFunction() {
+        // Declare variables
+        let notFound = document.getElementById("notFound");
+        let key = 0;
+        var input, filter, table, tr, td, i, txtValue;
+        input = document.getElementById("searchBox");
+        filter = input.value.toUpperCase();
+        table = document.getElementById("myTable");
+        tr = table.getElementsByTagName("tr");
+      
+        // Loop through all table rows, and hide those who don't match the search query
+        for (i = 0; i < tr.length; i++) {
+          td = tr[i].getElementsByTagName("td")[0];
+          if (td) {
+            txtValue = td.textContent || td.innerText;
+            if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                tr[i].style.display = "";
+                key++;
+            } else {
+              tr[i].style.display = "none";
+            }
+          }
+        }
+        if (key==0) {
+          notFound.classList.remove("d-none");
+        } else {
+          notFound.classList.add("d-none");
+        }
+      }
+    </script>
+</body>
+</html>

@@ -1,0 +1,223 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto+Mono:500&display=swap');
+@import url("https://fonts.googleapis.com/css?family=Raleway:400,400i,700");
+
+.country {
+    background-color:rgb(108,117,125);
+}
+
+.totalCases, .newCases {
+    background-color: rgb(0,123,255);
+}
+
+.totalRecovered, .newRecovered {
+    background-color: rgb(40,167,69);
+}
+
+.totalDeaths, .newDeaths {
+    background-color: rgb(220,53,69);
+}
+
+.countryRow {
+    background-color: rgba(108,117,125,0.5);
+}
+
+.totalCasesRow, .newCasesRow {
+    background-color: rgba(0,123,255,0.5);
+}
+
+.totalRecoveredRow, .newRecoveredRow {
+    background-color: rgba(40,167,69,0.5);
+}
+
+.totalDeathsRow, .newDeathsRow {
+    background-color: rgba(220,53,69,0.5);
+}
+
+.heading {
+    text-align: center;
+    font-size: 60px;
+    font-family: 'Roboto Mono', monospace;
+}
+
+.backToTop {
+    background-color: rgba(0,0,0,0.5);
+    color: white;
+}
+
+.backToTop:hover {
+    background-color: rgba(0,0,0,0.8);
+    color: wheat;
+}
+
+.globalTotalCasesHeader, .globalTotalRecoveredHeader, .globalTotalDeathsHeader, 
+.globalTotalCases, .globalTotalRecovered, .globalTotalDeaths {
+    font-size: 50px;
+}
+
+.globalTotalCases, .globalTotalRecovered, .globalTotalDeaths {
+    font-weight: bold;
+}
+
+.globalTotalCases {
+    color: #34dfeb;
+}
+
+.globalTotalRecovered {
+    color: #8aca2b;
+}
+
+.globalTotalDeaths {
+    color: #eb4034;
+}
+
+.globalTotalCasesHeader {
+    color: #aaaaaa;
+}
+
+.globalTotalRecoveredHeader {
+    color: #aaaaaa;
+}
+
+.globalTotalDeathsHeader {
+    color: #aaaaaa;
+}
+
+table { 
+    width: 100%; 
+    border-collapse: collapse; 
+}
+
+tr:nth-of-type(odd) { 
+    background: #eee; 
+}
+th { 
+    background: #333; 
+    color: white; 
+    font-weight: bold; 
+    position: sticky;
+    top: 0;
+    box-shadow: 0 2px 2px -1px rgba(0, 0, 0, 0.4);
+}
+td, th { 
+    padding: 6px; 
+    border: 1px solid #ccc; 
+    text-align: center; 
+}
+
+#notFound {
+    text-align: center;
+}
+
+@media (max-width: 760px) {
+	table, thead, tbody, th, td, tr { 
+		display: block; 
+	}
+	
+	thead tr { 
+		position: absolute;
+		top: -9999px;
+		left: -9999px;
+	}
+	
+    td, th {
+        text-align: left; 
+    }
+
+	tr {
+        border: 1px solid #ccc;
+        margin-bottom: 10px;
+    }
+	
+	td { 
+		border: none;
+		border-bottom: 1px solid #eee; 
+		position: relative;
+		padding-left: 50%; 
+	}
+	
+	td:before { 
+		position: absolute;
+		top: 6px;
+		left: 6px;
+		width: 45%; 
+		padding-right: 10px; 
+		white-space: nowrap;
+	}
+	
+	td:nth-of-type(1):before { content: "Country"; }
+	td:nth-of-type(2):before { content: "Total Cases"; }
+	td:nth-of-type(3):before { content: "Total Recovered"; }
+	td:nth-of-type(4):before { content: "Total Deaths"; }
+	td:nth-of-type(5):before { content: "New Cases"; }
+	td:nth-of-type(6):before { content: "New Recovered"; }
+	td:nth-of-type(7):before { content: "New Deaths"; }
+}
+
+.search-box {
+	border: solid 5px black;
+	display: inline-block;
+	position: relative;
+    border-radius: 50px;
+    margin-bottom: 40px;
+}
+
+input[type="text"] {
+    font-family: Raleway, sans-serif;
+    font-size: 20px;
+    font-weight: bold;
+    width: 50px;
+    height: 50px;
+    padding: 5px 40px 5px 10px;
+    border: none;
+    box-sizing: border-box;
+    border-radius: 50px;
+    transition: width 800ms cubic-bezier(0.5, -0.5, 0.5, 0.5) 600ms;
+}
+
+input[type="text"]:focus {
+    outline: none;
+}
+input[type="text"]:focus, input[type="text"]:not(:placeholder-shown) {
+    width: 300px;
+    transition: width 800ms cubic-bezier(0.5, -0.5, 0.5, 1.5);
+}
+
+input[type="text"]:focus + span, input[type="text"]:not(:placeholder-shown) + span {
+    bottom: 13px;
+    right: 10px;
+    transition: bottom 300ms ease-out 800ms, right 300ms ease-out 800ms;
+}
+
+input[type="text"]:focus + span:after, input[type="text"]:not(:placeholder-shown) + span:after {
+    top: 0;
+    right: 10px;
+    opacity: 1;
+    transition: top 300ms ease-out 1100ms, right 300ms ease-out 1100ms, opacity 300ms ease 1100ms;
+}
+
+span {
+    width: 25px;
+    height: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    bottom: -13px;
+    right: -15px;
+    transition: bottom 300ms ease-out 300ms, right 300ms ease-out 300ms;
+}
+
+span:before, span:after {
+    content: '';
+    height: 25px;
+    border-left: solid 5px black;
+    position: absolute;
+    transform: rotate(-45deg);
+}
+span:after {
+    transform: rotate(45deg);
+    opacity: 0;
+    top: -20px;
+    right: -10px;
+    transition: top 300ms ease-out, right 300ms ease-out, opacity 300ms ease-out;
+}
