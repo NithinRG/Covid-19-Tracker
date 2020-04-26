@@ -31,7 +31,7 @@ $.getJSON("https://api.covid19api.com/summary",function(data){
     //Last updated
     let months = [ " January ", " February ", " March ", " April ", " May ", " June ", 
     " July ", " August ", " September ", " October ", " November ", " December " ];
-    let lastUpdated = data.Date.slice(8,10) + months[parseInt(data.Date.slice(5,8))] + data.Date.slice(0,4) + ", " + data.Date.slice(11,19) + "(UTC)";
+    let lastUpdated = data.Date.slice(8,10) + months[parseInt(data.Date.slice(5,8)) - 1] + data.Date.slice(0,4) + ", " + data.Date.slice(11,19) + "(UTC)";
     $(".lastUpdated").append(lastUpdated);
 
     //Back to top
