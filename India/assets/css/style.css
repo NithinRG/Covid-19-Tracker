@@ -1,0 +1,235 @@
+body {
+    color: #6c757d;
+}
+
+h1 {
+    font-size: 2em;
+    font-weight: bold;
+}
+
+.abs {
+    position: absolute;
+    width: 100%;
+    left: 0;
+    text-align: center;
+}
+
+.countryConfirmedHeader, .countryActiveHeader, .countryRecoveredHeader, .countryDeceasedHeader {
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.countryConfirmedDelta, .countryRecoveredDelta, .countryDeceasedDelta {
+    font-size: 15px;
+}
+
+.countryConfirmed, .countryActive, .countryRecovered, .countryDeceased {
+    font-size: 24px;
+}
+
+.countryConfirmedHeader, .countryConfirmedDelta, .countryConfirmed {
+    color: #ff073a;
+}
+
+.countryActiveHeader, .countryActive {
+    color: #007bff;
+}
+
+.countryRecoveredHeader, .countryRecoveredDelta, .countryRecovered {
+    color: #28a745;
+}
+
+.countryDeceasedHeader, .countryDeceasedDelta, .countryDeceased {
+    color: #6c757d;
+}
+
+.stateDelta {
+    font-size: 12px;
+    margin-right: 0.25rem;
+    font-weight: initial;
+}
+
+body.darkMode {
+    background-color: #171e24;
+}
+
+.darkMode .navbar {
+    background-color: #1c2a35;
+}
+
+.search-box {
+	border: solid 5px #6c757d;
+	display: inline-block;
+	position: relative;
+    border-radius: 50px;
+    margin-bottom: 40px;
+}
+
+input[type="text"] {
+    font-family: Raleway, sans-serif;
+    font-size: 20px;
+    font-weight: bold;
+    width: 50px;
+    height: 50px;
+    padding: 5px 40px 5px 10px;
+    border: none;
+    box-sizing: border-box;
+    border-radius: 50px;
+    transition: width 800ms cubic-bezier(0.5, -0.5, 0.5, 0.5) 600ms;
+    color: #6c757d;
+}
+
+.darkMode input[type="text"] {
+    background-color: #171e24;
+}
+
+input[type="text"]:focus {
+    outline: none;
+}
+input[type="text"]:focus, input[type="text"]:not(:placeholder-shown) {
+    width: 300px;
+    transition: width 800ms cubic-bezier(0.5, -0.5, 0.5, 1.5);
+}
+
+input[type="text"]:focus + span.searchBox, input[type="text"]:not(:placeholder-shown) + span.searchBox {
+    bottom: 13px;
+    right: 10px;
+    transition: bottom 300ms ease-out 800ms, right 300ms ease-out 800ms;
+}
+
+input[type="text"]:focus + span.searchBox:after, input[type="text"]:not(:placeholder-shown) + span.searchBox:after {
+    top: 0;
+    right: 10px;
+    opacity: 1;
+    transition: top 300ms ease-out 1100ms, right 300ms ease-out 1100ms, opacity 300ms ease 1100ms;
+}
+
+span.searchBox {
+    width: 25px;
+    height: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    bottom: -13px;
+    right: -15px;
+    transition: bottom 300ms ease-out 300ms, right 300ms ease-out 300ms;
+}
+
+span.searchBox:before, span.searchBox:after {
+    content: '';
+    height: 25px;
+    border-left: solid 5px #6c757d;
+    position: absolute;
+    transform: rotate(-45deg);
+}
+span.searchBox:after {
+    transform: rotate(45deg);
+    opacity: 0;
+    top: -20px;
+    right: -10px;
+    transition: top 300ms ease-out, right 300ms ease-out, opacity 300ms ease-out;
+}
+
+table {
+    align-self: center;
+    max-width: 800px;
+    border-collapse: separate;
+    border-spacing: 3px 4px;
+    position: relative;
+}
+
+thead {
+    color: #626669;
+    font-size: 12px;
+}
+
+.darkMode thead {
+    color: #a6adb3;
+}
+
+th {
+    background-color: #e7e7e7;
+    position: sticky;
+    border-radius: 5px;
+    padding: 0.5rem !important;
+    border: none !important;
+    font-weight: bold;
+    top: 4px;
+}
+
+.darkMode th {
+    background-color: #1c2d39;
+}
+
+th:hover {
+    background-color: #d7d7d7;
+}
+
+.darkMode th:hover {
+    background-color: #203849;
+}
+
+tbody {
+    color: #6c757d;
+}
+
+tr:nth-child(even) {
+    background-color: #f6f6f6;
+}
+
+.darkMode tr:nth-child(even) {
+    background-color: #19252e;
+}
+
+tr:hover {
+    background-color: #d7d7d7;
+}
+
+.darkMode tr:hover {
+    background-color: #203849;
+}
+
+td {
+    border-radius: 5px;
+    border: none !important;
+    padding: 4px !important;
+    text-align: right;
+    font-weight: bold;
+}
+
+td:first-child {
+	max-width: 7.5rem;
+	text-align: left;
+    word-wrap: break-word
+}
+
+.short {
+    display: none;
+}
+
+.isRed {
+    color: #ff073a;
+}
+
+.isBlue {
+    color: #007bff;
+}
+
+.isGreen {
+    color: #28a745;
+}
+
+.isGray {
+    color: #6c757d;
+}
+
+@media (max-width: 767px) {
+    .long {
+        display: none;
+    }
+
+    .short {
+        display: inline;
+    }
+}
