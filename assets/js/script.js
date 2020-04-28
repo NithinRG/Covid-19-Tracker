@@ -17,13 +17,13 @@ $.getJSON("https://api.covid19api.com/summary",function(data){
         let newDeaths = data.Countries[i].NewDeaths;
         $(".tableBody").append(
             `<tr>
-                <td class="countryRow">` + country + `</td>
-                <td class="totalCasesRow">` + totalCases + `</td>
-                <td class="totalRecoveredRow">` + totalRecovered + `</td>
-                <td class="totalDeathsRow">` + totalDeaths + `</td>
-                <td class="newCasesRow">` + newCases + `</td>
-                <td class="newRecoveredRow">` + newRecovered + `</td>
-                <td class="newDeathsRow">` + newDeaths + `</td>
+                <td class="countryRow">${country}</td>
+                <td class="totalCasesRow">${totalCases}</td>
+                <td class="totalRecoveredRow">${totalRecovered}</td>
+                <td class="totalDeathsRow">${totalDeaths}</td>
+                <td class="newCasesRow">${newCases}</td>
+                <td class="newRecoveredRow">${newRecovered}</td>
+                <td class="newDeathsRow">${newDeaths}</td>
             </tr>`
         );
     }
