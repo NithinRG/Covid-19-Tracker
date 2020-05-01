@@ -38,11 +38,11 @@ $.getJSON("https://api.covid19india.org/v2/state_district_wise.json", function (
         });
         $(".tableBody").append(
             `<tr>
-                <td>` + state + `</td>
-                <td><span class="stateDelta isRed">` + returnNonZero(stateConfirmedDelta) + `</span>` + stateConfirmed.toLocaleString('en-IN') + `</td>
-                <td>` + stateActive.toLocaleString('en-IN') + `</td>
-                <td><span class="stateDelta isGreen">` + returnNonZero(stateRecoveredDelta) + `</span>` + stateRecovered.toLocaleString('en-IN') + `</td>
-                <td><span class="stateDelta isGray">` + returnNonZero(stateDeceasedDelta) + `</span>` + stateDeceased.toLocaleString('en-IN') + `</td>
+                <td>${state}</td>
+                <td><span class="stateDelta isRed">${returnNonZero(stateConfirmedDelta)}</span>${stateConfirmed.toLocaleString('en-IN')}</td>
+                <td>${stateActive.toLocaleString('en-IN')}</td>
+                <td><span class="stateDelta isGreen">${returnNonZero(stateRecoveredDelta)}</span>${stateRecovered.toLocaleString('en-IN')}</td>
+                <td><span class="stateDelta isGray">${returnNonZero(stateDeceasedDelta)}</span>${stateDeceased.toLocaleString('en-IN')}</td>
             </tr>`
         );
         countryConfirmed += stateConfirmed;
