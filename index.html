@@ -10,6 +10,7 @@
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
     <script src="./assets/js/script.js"></script>
+    <script src="./assets/js/jquery.tablesorter.js"></script>
     <title>COVID-19 Stats</title>
 </head>
 <body>
@@ -50,13 +51,13 @@
         <table id="myTable">
             <thead>
               <tr>
-                <th class="p-3 country" scope="col">Country</th>
-                <th class="p-3 totalCases" scope="col">Total Cases</th>
-                <th class="p-3 totalRecovered" scope="col">Total Recovered</th>
-                <th class="p-3 totalDeaths" scope="col">Total Deaths</th>
-                <th class="p-3 newCases" scope="col">New Cases</th>
-                <th class="p-3 newRecovered" scope="col">New Recovered</th>
-                <th class="p-3 newDeaths" scope="col">New Deaths</th>
+                <th class="p-3 country" scope="col">Country<img src="./assets/img/asc.png" class="sortIcon" alt=""></th>
+                <th class="p-3 totalCases" scope="col">Total Cases<img src="./assets/img/unsorted.png" class="sortIcon" alt=""></th>
+                <th class="p-3 totalRecovered" scope="col">Total Recovered<img src="./assets/img/unsorted.png" class="sortIcon" alt=""></th>
+                <th class="p-3 totalDeaths" scope="col">Total Deaths<img src="./assets/img/unsorted.png" class="sortIcon" alt=""></th>
+                <th class="p-3 newCases" scope="col">New Cases<img src="./assets/img/unsorted.png" class="sortIcon" alt=""></th>
+                <th class="p-3 newRecovered" scope="col">New Recovered<img src="./assets/img/unsorted.png" class="sortIcon" alt=""></th>
+                <th class="p-3 newDeaths" scope="col">New Deaths<img src="./assets/img/unsorted.png" class="sortIcon" alt=""></th>
               </tr>
             </thead>
             <tbody class="tableBody">

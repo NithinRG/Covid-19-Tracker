@@ -82,6 +82,11 @@
     color: #aaaaaa;
 }
 
+.sortIcon {
+    height: 15px;
+    margin-left: 5px;
+}
+
 table { 
     width: 100%; 
     border-collapse: collapse; 

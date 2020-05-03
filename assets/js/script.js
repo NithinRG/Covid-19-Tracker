@@ -55,4 +55,18 @@ $.getJSON("https://api.covid19api.com/summary",function(data){
         });
     });
     
+    //Sort icon function
+    $(function() {
+        $("#myTable").tablesorter({ sortList: [[0,0]] });
+    });
+    $("th").click(function () {
+        setTimeout(
+            function () {
+                $(".tablesorter-headerDesc").find("img").attr("src","./assets/img/desc.png");
+                $(".tablesorter-headerAsc").find("img").attr("src","./assets/img/asc.png");
+                $(".tablesorter-headerUnSorted").find("img").attr("src","./assets/img/unsorted.png");
+            },
+            5);
+    });
+
 });
