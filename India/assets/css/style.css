@@ -24,7 +24,7 @@ h1 {
 }
 
 .countryConfirmed, .countryActive, .countryRecovered, .countryDeceased {
-    font-size: 24px;
+    font-size: 20px;
 }
 
 .countryConfirmedHeader, .countryConfirmedDelta, .countryConfirmed {
@@ -47,6 +47,7 @@ h1 {
     font-size: 12px;
     margin-right: 0.25rem;
     font-weight: initial;
+    overflow-wrap: anywhere;
 }
 
 body.darkMode {
