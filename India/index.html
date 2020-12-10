@@ -18,11 +18,6 @@
             <h1 class="mx-auto my-1">COVID-19 <span style="color: #4c75f2;">INDIA</span></h1>
             <img src="./assets/img/dark-mode.png" width="30" height="30" class="" id="dark" alt="">
         </div>
-        <!-- <div class="text-center">
-            <div class="search-box">
-              <input type="text" id="searchBox" onkeyup="myFunction()" placeholder="Search by State/UT"/><span class="searchBox"></span>
-            </div>
-        </div> -->
         <div class="container">
             <div class="row mb-5">
                 <div class="col-3 pb-3 mx-auto">
@@ -71,7 +66,14 @@
                 </div>
             </div>
         </div>
+        <div class="text-center">
+            <div class="search-bar">
+                <input type="text" class="search-box">
+                <button class="search">Search</button>
+            </div>
+        </div>
         <div class="mx-2">
+            <div class="notFound text-center">No results found</div>
             <table class="table mx-auto">
                 <thead>
                     <th>State/UT</th>
@@ -86,8 +88,5 @@
             </table>
         </div>
     </div>
-    <script>
-        function myFunction(){};
-    </script>
 </body>
 </html>
